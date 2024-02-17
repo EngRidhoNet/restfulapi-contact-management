@@ -1,0 +1,88 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Contact API",
+        "description": "Contact API",
+        "version": "1.0"
+    },
+    "servers": [{ "url": "http://localhost:8000" }],
+    "paths": {
+        "/api/contacts":{
+            "post":{
+                "description": "Create New Contact",
+                "requestBody":{
+                    "description": "create new contact",
+                    "content": {
+                        "application/json": {
+                            "schema":{
+                                "type": "object",
+                                "properties": {
+                                    "firstname": {
+                                       "type": "string"
+                                    },
+                                    "lastname":{
+                                        "type": "string"
+                                    },
+                                    "email":{
+                                        "type": "string"
+                                    },
+                                    "phone":{
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200" :{
+                        "description": "success create contact",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type": "object",
+                                    "properties": {
+                                        "data":{
+                                            "type": "object",
+                                            "properties": {
+                                                "id" :{
+                                                    "type": "number"
+                                                },
+                                                "firstname":{
+                                                    "type": "string"
+                                                },
+                                                "lastname":{
+                                                    "type": "string"
+                                                },
+                                                "email":{
+                                                    "type": "string"
+                                                },
+                                                "phone":{
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "errors":{
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/contacts/{id}" : {
+            "put" : {
+                "description": "Update contact"
+            },
+            "get" :{
+                "description": "Get Contact"
+            },
+            "delete" :{
+                "description": "remove contact"
+            }
+        }
+    }
+}

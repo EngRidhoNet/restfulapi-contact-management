@@ -13,8 +13,61 @@
     "paths": {
         "/api/users" : {
             "post" : {
-                
+                "description": "Register New User",
+                "requestBody":{
+                    "content": {
+
+                        "application/json" : {
+                            "examples": {
+                                "ridho" :{
+                                    "description": "Register User Ridho",
+                                    "value": {
+                                        "username" : "Ridho",
+                                        "password" : "rahasia",
+                                        "name" : "Ridho Aulia Rahman"
+                                    }
+                                }
+                            },
+                            "schema" : {
+                                "required": [
+                                    "name","password","username"
+                                ],
+                                "type" : "object",
+                                "properties" : {
+                                    "username" : {
+                                        "type": "string"
+                                    },
+                                    "password" : {
+                                        "type": "string"
+                                    },
+                                    "name"     : {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                }
+            }
+        },
+        "/api/users/login" : {
+            "post" : {
+                "description": "Login User"
+            }
+        },
+        "/api/users/current" : {
+            "get" : {
+                "description": "Get current User"
+            },
+            "patch": {
+                "description": "Update current User"
+            }
+        },
+        "/api/users/logout" : {
+            "delete" : {
+                "description": "logout current user"
             }
         }
+
     }
 }

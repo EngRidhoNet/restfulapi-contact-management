@@ -1,0 +1,35 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Address API",
+        "description": "Address API",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000"
+        }
+    ],
+    "paths": {
+        "/api/contacts/{idContact}/addresses" : {
+            "post": {
+                "description": "Create new Address"
+            },
+            "get":{
+                "description": "Get List Addresses"
+            }
+        },
+        "/api/contacts/{idContact}/addresses/{idAddress}":{
+            "get" :{
+                "description": "Get Address"
+            },
+            "put" :{
+                "description": "Update address"
+            },
+            "delete":{
+                "description": "delete address"
+            }
+        }
+
+    }
+}
